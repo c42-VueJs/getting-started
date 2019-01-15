@@ -11,8 +11,12 @@
     <div id="app">
         <!-- v-once gets the binding only run once and then never change -->
         <h1 v-once>{{ title }}</h1>
+        
         <!-- VueJs would look into data object for a 'title' property -->
         <p>{{ sayHello() }} - <a v-bind:href="website">Google</a> </p>
+
+        <!-- 'v-html' to render raw html -->
+        <p v-html="dynamicLink"></p>
     </div>
 
     <script>
@@ -20,7 +24,8 @@
             el: '#app', // CSS-style ID selector
             data: {
                 title: 'Hello World',
-                website: 'www.google.co.uk'
+                website: 'www.google.co.uk',
+                dynamicLink: '<a href="http://www.microsoft.com">Microsoft</a>'
             },
             methods: {
                 sayHello: function () {
