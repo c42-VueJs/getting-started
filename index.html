@@ -9,22 +9,24 @@
 
 <body>
     <div id="app">
-        <input type="text" v-on:input="changeTitle">
+        <!-- v-once gets the binding only run once and then never change -->
+        <h1 v-once>{{ title }}</h1>
         <!-- VueJs would look into data object for a 'title' property -->
-        <p>{{ title }} - <a v-bind:href="website">Google</a> </p>
+        <p>{{ sayHello() }} - <a v-bind:href="website">Google</a> </p>
     </div>
 
     <script>
         new Vue({
             el: '#app', // CSS-style ID selector
             data: {
-                title: 'Hello World from Arun1',
+                title: 'Hello World',
                 website: 'www.google.co.uk'
             },
             methods: {
-                changeTitle: function (e) {
+                sayHello: function () {
                     // 'this' can be used as all properties in 'data' would be proxied to the global Vue object
-                    this.title = e.target.value;
+                    this.title = 'Good Morning!';
+                    return this.title;
                 }
             }
         });
