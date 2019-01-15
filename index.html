@@ -9,6 +9,7 @@
 
 <body>
     <div id="app">
+        <input type="text" v-on:input="changeTitle">
         <!-- VueJs would look into data object for a 'title' property -->
         <p>{{ title }}</p>
     </div>
@@ -18,6 +19,12 @@
             el: '#app', // CSS-style ID selector
             data: {
                 title: 'Hello World from Arun1'
+            },
+            methods: {
+                changeTitle: function (e) {
+                    // 'this' can be used as all properties in 'data' would be proxied to the global Vue object
+                    this.title = e.target.value;
+                }
             }
         });
     </script>
