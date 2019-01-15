@@ -11,14 +11,15 @@
     <div id="app">
         <input type="text" v-on:input="changeTitle">
         <!-- VueJs would look into data object for a 'title' property -->
-        <p>{{ title }}</p>
+        <p>{{ title }} - <a v-bind:href="website">Google</a> </p>
     </div>
 
     <script>
         new Vue({
             el: '#app', // CSS-style ID selector
             data: {
-                title: 'Hello World from Arun1'
+                title: 'Hello World from Arun1',
+                website: 'www.google.co.uk'
             },
             methods: {
                 changeTitle: function (e) {
