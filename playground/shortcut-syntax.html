@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <button v-on:click="changeLink">Change Link</button> -->
+        <button @click="changeLink">Change Link</button>
+
+        <!-- <a v-bind:href="link">Link</a> -->
+        <a :href="link">Link</a>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app', // CSS-style ID selector
+            data: {
+                link: 'www.google.co.uk'
+            },
+            methods: {
+                changeLink: function() {
+                    this.link = 'www.microsoft.com';
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
