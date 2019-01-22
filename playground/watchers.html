@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button v-on:click="counter++">Increment</button>
+
+        <p>{{ counter }}</p>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app', // CSS-style ID selector
+            data: {
+                counter: 0
+            },
+            watch: {
+                counter: function(newValue, oldValue) {
+                    console.log(newValue, oldValue);
+
+                    vm = this;
+                    setTimeout(function() {
+                        vm.counter = 0;
+                    }, 2000);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
