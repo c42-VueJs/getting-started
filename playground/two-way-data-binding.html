@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 2-way data bind using 'v-model' -->
+        <input type="text" v-model="name">
+
+        <p>{{ name }}</p>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app', // CSS-style ID selector
+            data: {
+                name: 'Rishi'
+            }
+        });
+    </script>
+</body>
+
+</html>
